@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/assets/images/sbxybailogo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D 计算机知识图谱</title>
+    <meta
+      name="description"
+      content="通过 3D 图谱了解程序设计、数据结构、网络、操作系统、数据库、软件工程与 AI 等核心计算机知识。"
+    />
+  </head>
+  <body>
+    <div id="wrapper-page" class="scrollContainer">
+      <div id="st-content-graphic" class="st-content-graphic scrollContent">
+        <main class="marvel-graph">
+          <article class="st-article">
+            <section class="chapter-1">
+              <div class="content-columns-fullwidth">
+                <div class="marvel-graph-container">
+                  <div class="connection-graph-container">
+                    <div class="marvel-navbar">
+                      <div class="navbar-content">
+                        <!-- <div class="sound-button">
+                          <div class="wrap" style="display: none;">
+                            <img src="/assets/images/sound-on.svg" alt="Sound On">
+                          </div>
+                          <div class="wrap">
+                            <img src="/assets/images/sound-off.svg" alt="Sound Off">
+                          </div>
+                        </div> -->
+                        <!-- <div class="option-graph">
+                          <div class="option character selected">
+                            <p>TOPICS</p>
+                          </div>
+                          <div class="option movie">
+                            <p>PATHS</p>
+                          </div>
+                        </div> -->
+                        <!-- <div class="option-search">
+                          <div class="block-overlay"></div>
+                          <div class="virtual-button">
+                            <img src="/assets/images/search.svg" alt="Search">
+                          </div>
+                          <select class="search-select">
+                            <option value="">程序设计基础</option>
+                          </select>
+                        </div> -->
+                      </div>
+                    </div>
+
+                    <div class="graph-content">
+                      <canvas id="graph-canvas"></canvas>
+                    </div>
+
+                    <div class="filter-option-main" style="display: none;">
+                      <div class="filter-option-limitWidth">
+                        <div class="filter-option-container">
+                          <div class="filter-option-content">
+                            <div class="character vue-scroll">
+                              <div class="option default selected"><span>全部主题</span></div>
+                              <div class="option"><span>基础</span></div>
+                              <div class="option"><span>算法</span></div>
+                              <div class="option"><span>系统</span></div>
+                              <div class="option"><span>开发</span></div>
+                              <div class="option"><span>数据</span></div>
+                              <div class="option"><span>智能</span></div>
+                              <div class="option"><span>安全</span></div>
+                              <div class="option"><span>工程</span></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="marvel-info-panel" style="width: 0px;"></div>
+                  </div>
+
+                  <div class="overlay none" style="display: none;">
+                    <div class="loading-icon">
+                      <p>Loading . . .</p>
+                    </div>
+                  </div>
+
+                  <div class="marvel-intro-container">
+                    <div class="source">Source: Computer Science Knowledge Map</div>
+                    <div class="intro-content">
+                      <div class="headline">
+                        <div class="fade fade0">
+                          <p>课程结构、能力方向与工程实践的一体化展示</p>
+                        </div>
+                        <div class="fade fade1">
+                          <h1>3D 计算机知识图谱</h1>
+                        </div>
+                      </div>
+                      <div class="fade description fade2">
+                        <p>从程序设计基础出发，逐步理解算法、系统、网络、数据库、Web 开发与人工智能的关联。</p>
+                        <div class="st-byline">
+                          <time datetime="2026-04-08">UPDATED: APRIL 8, 2026</time>
+                        </div>
+                        <div class="produced-by">
+                          Produced by:
+                          <p>3D Knowledge Graph Demo</p>
+                        </div>
+                      </div>
+                      <button type="button" name="button" class="fade fade3" id="start-button">Start</button>
+                    </div>
+
+                    <div class="instruction-overlay" style="display: none;">
+                      <div class="content">
+                        <div>
+                          <div class="inst">
+                            <span>Left mouse button: Hold and drag to ROTATE scene</span>
+                          </div>
+                          <div class="inst">
+                            <span>Right mouse button: Hold and drag to PAN scene</span>
+                          </div>
+                          <div class="inst">
+                            <span>Mouse wheel: Scroll to ZOOM in and out of scene</span>
+                          </div>
+                        </div>
+                        <div class="button-instr">
+                          <button type="button" name="button" id="instruction-ok">Ok</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </article>
+        </main>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

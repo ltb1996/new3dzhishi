@@ -1,0 +1,477 @@
+/* Base styling */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #09080a;
+  color: #fff;
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+.scrollContainer {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.scrollContent {
+  width: 100%;
+  height: 100%;
+}
+
+/* Marvel Graph Container */
+.marvel-graph-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.connection-graph-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Marvel Navbar */
+.marvel-navbar {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  padding: 15px;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sound-button {
+  cursor: pointer;
+}
+
+.sound-button img {
+  width: 24px;
+  height: 24px;
+}
+
+.option-graph {
+  display: flex;
+  background-color: rgba(30, 30, 35, 0.8);
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.option {
+  padding: 8px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 30px;
+}
+
+.option p {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.option.selected {
+  background-color: #d3d4d6;
+  color: #09080a;
+}
+
+.option-search {
+  position: relative;
+  width: 250px;
+}
+
+.virtual-button {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.virtual-button img {
+  width: 16px;
+  height: 16px;
+}
+
+.search-select {
+  width: 100%;
+  padding: 8px 30px;
+  background-color: rgba(30, 30, 35, 0.8);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  appearance: none;
+  cursor: pointer;
+}
+
+/* Graph Content */
+.graph-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#graph-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+/* Filter Options */
+.filter-option-main {
+  position: absolute;
+  top: 76px;
+  left: 0;
+  width: 100%;
+  z-index: 9;
+}
+
+.filter-option-limitWidth {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.filter-option-container {
+  background-color: rgba(30, 30, 35, 0.8);
+  border-radius: 10px;
+  padding: 15px;
+  margin: 0 15px;
+}
+
+.character {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.character .option {
+  padding: 5px 15px;
+  background-color: rgba(50, 50, 55, 0.8);
+  border-radius: 15px;
+}
+
+.character .option.selected {
+  background-color: #d3d4d6;
+  color: #09080a;
+}
+
+/* Marvel Info Panel */
+.marvel-info-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 200px;
+  background-color: rgba(30, 30, 35, 0.9);
+  transition: width 0.3s;
+  overflow: hidden;
+  z-index: 15;
+  /* padding: 15px 20px 0 30px; */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
+}
+
+.info-header {
+  margin-bottom: 20px;
+  position: relative;
+  margin-top: 20px;
+}
+
+.close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.close-button img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.close-button img:hover {
+  opacity: 1;
+}
+
+.character-image, .movie-image {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 18px;
+  padding-top: 12px;
+}
+
+.character-image img, .movie-image img {
+  width: 156px;
+  height: 156px;
+  border-radius: 28px;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.02));
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+}
+
+.movie-image img {
+  border-radius: 18px;
+  height: auto;
+  width: 220px;
+  padding: 0;
+}
+
+.character-name, .movie-title {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.character-description, .movie-description {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color: #d3d4d6;
+  width: 260px;
+  margin-left: 20px;
+}
+
+.character-details, .movie-details {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #d3d4d6;
+  margin-left: 20px;
+}
+
+.character-type, .character-groups, .character-movies,
+.movie-release-date, .movie-phase {
+  margin-bottom: 10px;
+}
+
+/* Loading overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(9, 8, 10, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+
+.loading-icon {
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* Intro Container */
+.marvel-intro-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: rgba(9, 8, 10, 0.7);
+  z-index: 30;
+}
+
+.source {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 12px;
+  color: #d3d4d6;
+}
+
+.intro-content {
+  max-width: 800px;
+  text-align: center;
+}
+
+.headline p {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.headline h1 {
+  font-size: 48px;
+  margin-bottom: 30px;
+}
+
+.description p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.st-byline {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #d3d4d6;
+}
+
+.produced-by {
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  margin-bottom: 30px;
+  color: #d3d4d6;
+}
+
+.produced-by p {
+  margin: 0;
+  font-size: 14px;
+}
+
+#start-button {
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 12px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 0.3s;
+}
+
+#start-button:hover {
+  background-color: #fff;
+  color: #09080a;
+}
+
+/* Instruction Overlay */
+.instruction-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(9, 8, 10, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 35;
+}
+
+.instruction-overlay .content {
+  max-width: 500px;
+  background-color: rgba(30, 30, 35, 0.8);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.inst {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.inst span {
+  margin-left: 15px;
+}
+
+.button-instr {
+  margin-top: 30px;
+  text-align: center;
+}
+
+#instruction-ok {
+  background-color: #d3d4d6;
+  border: none;
+  color: #09080a;
+  padding: 10px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+/* Fade animations */
+.fade {
+  opacity: 1;
+  animation: fadeIn 0.8s ease-in;
+}
+
+.fade0 {
+  animation-delay: 0.2s;
+}
+
+.fade1 {
+  animation-delay: 0.6s;
+}
+
+.fade2 {
+  animation-delay: 1s;
+}
+
+.fade3 {
+  animation-delay: 1.4s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade out animation */
+.fade-out {
+  animation: fadeOut 0.5s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .navbar-content {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .option-search {
+    width: 100%;
+  }
+
+  .headline h1 {
+    font-size: 36px;
+  }
+
+  .description p {
+    font-size: 16px;
+  }
+}
