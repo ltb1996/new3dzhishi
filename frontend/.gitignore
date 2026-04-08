@@ -37,8 +37,9 @@ coverage/
 .tmp/
 temp/
 
-# 可能生成的类型定义文件
+# 可能生成的类型定义文件（手写的 vite-env.d.ts 除外）
 *.d.ts
+!src/vite-env.d.ts
 
 # 与Three.js相关的大型资源文件（如果有单独的资源文件夹）
 # 如果有很大的模型或纹理文件不适合放在Git中
