@@ -195,7 +195,7 @@ body {
 .close-button {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 10px;
   cursor: pointer;
   z-index: 2;
 }
@@ -211,14 +211,16 @@ body {
   opacity: 1;
 }
 
-.character-image, .movie-image {
+.character-image,
+.movie-image {
   width: 100%;
   text-align: center;
   margin-bottom: 18px;
   padding-top: 12px;
 }
 
-.character-image img, .movie-image img {
+.character-image img,
+.movie-image img {
   width: 156px;
   height: 156px;
   border-radius: 28px;
@@ -236,14 +238,16 @@ body {
   padding: 0;
 }
 
-.character-name, .movie-title {
+.character-name,
+.movie-title {
   font-size: 20px;
   text-align: center;
   margin-bottom: 15px;
   color: #fff;
 }
 
-.character-description, .movie-description {
+.character-description,
+.movie-description {
   font-size: 14px;
   line-height: 1.5;
   margin-bottom: 20px;
@@ -252,15 +256,19 @@ body {
   margin-left: 20px;
 }
 
-.character-details, .movie-details {
+.character-details,
+.movie-details {
   font-size: 14px;
   line-height: 1.5;
   color: #d3d4d6;
   margin-left: 20px;
 }
 
-.character-type, .character-groups, .character-movies,
-.movie-release-date, .movie-phase {
+.character-type,
+.character-groups,
+.character-movies,
+.movie-release-date,
+.movie-phase {
   margin-bottom: 10px;
 }
 

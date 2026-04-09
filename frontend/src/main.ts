@@ -2,6 +2,7 @@ import './styles.css';
 import { fetchGraphData } from './api/graphApi';
 import type { LearningPath, Topic } from './types/knowledge';
 import { GraphEngine } from './visualization/GraphEngine';
+import { ChatPanel } from './chat/ChatPanel';
 
 document.addEventListener('DOMContentLoaded', () => {
   const app = new KnowledgeGraphApp();
@@ -20,6 +21,7 @@ class KnowledgeGraphApp {
   private learningPaths: LearningPath[] = [];
   private topicTags: string[] = ['全部主题'];
   private learningStages: string[] = ['全部路线'];
+  private chatPanel = new ChatPanel();
 
   public async init(): Promise<void> {
     this.graphContainer = document.querySelector('.graph-content') as HTMLElement | null;
@@ -310,9 +312,17 @@ class KnowledgeGraphApp {
     header.appendChild(imageWrapper);
     header.appendChild(name);
 
+    const aiButton = document.createElement('button');
+    aiButton.className = 'ai-tutor-button';
+    aiButton.textContent = 'AI 助教';
+    aiButton.addEventListener('click', () => {
+      this.chatPanel.open(topic, 'topic');
+    });
+
     container.appendChild(header);
     container.appendChild(description);
     container.appendChild(details);
+    container.appendChild(aiButton);
   }
 
   private createLearningPathInfoPanel(path: LearningPath, container: HTMLElement): void {
@@ -352,6 +362,13 @@ class KnowledgeGraphApp {
     details.appendChild(difficulty);
     details.appendChild(stage);
 
+    const aiButton = document.createElement('button');
+    aiButton.className = 'ai-tutor-button';
+    aiButton.textContent = 'AI 助教';
+    aiButton.addEventListener('click', () => {
+      this.chatPanel.open(path, 'path');
+    });
+
     header.appendChild(closeButton);
     header.appendChild(imageWrapper);
     header.appendChild(title);
@@ -359,6 +376,7 @@ class KnowledgeGraphApp {
     container.appendChild(header);
     container.appendChild(description);
     container.appendChild(details);
+    container.appendChild(aiButton);
   }
 
   private setOverlayVisible(visible: boolean, message = 'Loading . . .'): void {

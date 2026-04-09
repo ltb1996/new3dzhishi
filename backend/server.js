@@ -3,6 +3,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 const { URL } = require("node:url");
 const { graphData } = require("./data/knowledge-graph-data");
+const { handleChatRequest } = require("./chat-handler");
 
 const HOST = "0.0.0.0";
 const PORT = Number(process.env.PORT || 3000);
@@ -61,6 +62,11 @@ const server = http.createServer((request, response) => {
 
   if (requestUrl.pathname === "/api/graph") {
     sendJson(response, 200, graphData);
+    return;
+  }
+
+  if (requestUrl.pathname === "/api/chat" && request.method === "POST") {
+    handleChatRequest(request, response);
     return;
   }
 
