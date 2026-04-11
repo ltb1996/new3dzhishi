@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/assets/images/sbxybailogo.png" />
+    <link rel="icon" type="image/png" href="./public/assets/images/left_top_lan.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3D 计算机知识图谱</title>
+    <title>基于Three.js和LLM的3D计算机知识图谱</title>
     <meta
       name="description"
       content="通过 3D 图谱了解程序设计、数据结构、网络、操作系统、数据库、软件工程与 AI 等核心计算机知识。"
@@ -53,7 +53,7 @@
                       <canvas id="graph-canvas"></canvas>
                     </div>
 
-                    <div class="filter-option-main" style="display: none;">
+                    <div class="filter-option-main" style="display: none">
                       <div class="filter-option-limitWidth">
                         <div class="filter-option-container">
                           <div class="filter-option-content">
@@ -73,10 +73,10 @@
                       </div>
                     </div>
 
-                    <div class="marvel-info-panel" style="width: 0px;"></div>
+                    <div class="marvel-info-panel" style="width: 0px"></div>
                   </div>
 
-                  <div class="overlay none" style="display: none;">
+                  <div class="overlay none" style="display: none">
                     <div class="loading-icon">
                       <p>Loading . . .</p>
                     </div>
@@ -90,11 +90,14 @@
                           <p>课程结构、能力方向与工程实践的一体化展示</p>
                         </div>
                         <div class="fade fade1">
-                          <h1>3D 计算机知识图谱</h1>
+                          <h1>基于Three.js和LLM的3D计算机知识图谱</h1>
                         </div>
                       </div>
                       <div class="fade description fade2">
-                        <p>从程序设计基础出发，逐步理解算法、系统、网络、数据库、Web 开发与人工智能的关联。</p>
+                        <p>
+                          从程序设计基础出发，逐步理解算法、系统、网络、数据库、Web
+                          开发与人工智能的关联。
+                        </p>
                         <div class="st-byline">
                           <time datetime="2026-04-08">UPDATED: APRIL 8, 2026</time>
                         </div>
@@ -103,10 +106,12 @@
                           <p>3D Knowledge Graph Demo</p>
                         </div>
                       </div>
-                      <button type="button" name="button" class="fade fade3" id="start-button">Start</button>
+                      <button type="button" name="button" class="fade fade3" id="start-button">
+                        Start
+                      </button>
                     </div>
 
-                    <div class="instruction-overlay" style="display: none;">
+                    <div class="instruction-overlay" style="display: none">
                       <div class="content">
                         <div>
                           <div class="inst">
